@@ -1,4 +1,4 @@
-"""ProjectDump URL Configuration
+"""ProjectDump URL Configuration$
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -13,13 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url,include
+from django.conf.urls import url
 from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$',views.home,name='home'),
-    url(r'^login/', include('Login.urls',namespace='login')),
-    url(r'^dashboard/', include('Team.urls',namespace='team'))
+    url(r'^dashboard/', views.dashboard, name = 'dashboard'),
+    url(r'^teams/', views.teams, name = 'teams'),
+    url(r'^tasks/', views.tasks, name = 'tasks'),
+    url(r'^discussions/', views.discussions, name = 'discussions'),
 ]
